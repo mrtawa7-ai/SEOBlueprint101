@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEOBlueprint101.com - DIY SEO Blueprint for E-Commerce - Get Free Organic Traffic</title>
+    <meta name="description" content="SEOBlueprint101.com - Complete DIY SEO system for e-commerce businesses. Rank on Google, drive organic traffic, and monetize with AdSense & Etsy. 30-day action plan included.">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1f3a 0%, #2d3561 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1f3a 0%, #2d3561 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .highlight {
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #00d4ff;
+            color: #1a1f3a;
+        }
+
+        .btn-primary:hover {
+            background-color: #00b8d4;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid #00d4ff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #00d4ff;
+            color: #1a1f3a;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1a1f3a;
+        }
+
+        /* Two Column Layout with Sidebar */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a1f3a;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #00d4ff;
+            padding-bottom: 10px;
+        }
+
+        /* AdSense Placeholder */
+        .adsense-placeholder {
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #666;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .adsense-placeholder strong {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Charts */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a1f3a;
+            margin-bottom: 20px;
+        }
+
+        /* Feature Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #00d4ff;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #1a1f3a;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Pricing/Product Section */
+        .product-section {
+            background: linear-gradient(135deg, #1a1f3a 0%, #2d3561 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .product-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            border: 2px solid #00d4ff;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .product-price {
+            font-size: 48px;
+            color: #ffd700;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .product-description {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .product-features {
+            text-align: left;
+            margin: 30px 0;
+            font-size: 14px;
+        }
+
+        .product-features li {
+            margin-bottom: 10px;
+            list-style: none;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .product-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1f3a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #00d4ff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            nav a {
+                margin-left: 15px;
+                font-size: 12px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Data Visualization Colors */
+        .chart-bg-1 { background-color: #00d4ff; }
+        .chart-bg-2 { background-color: #ffd700; }
+        .chart-bg-3 { background-color: #ff6b6b; }
+        .chart-bg-4 { background-color: #4ecdc4; }
+        .chart-bg-5 { background-color: #95e1d3; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo" style="display: flex; align-items: center; gap: 10px;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663479099267/UdKpjxdWSWkE9WZgbpPC7n/seo-blueprint-logo.png" alt="SEOBlueprint101" style="height: 40px;"> SEOBlueprint101.com</div>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#data">Data</a>
+                <a href="#product">Download</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Get <span class="highlight">Free Organic Traffic</span> Without Ads</h1>
+            <p>Complete DIY SEO system designed for e-commerce businesses. Rank on Google, drive qualified buyers, and build multiple income streams.</p>
+            <p style="font-size: 14px; opacity: 0.8; margin-top: 15px;"><strong>SEOBlueprint101.com</strong> — Your DIY SEO Roadmap</p>
+            
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('product').scrollIntoView({behavior: 'smooth'})">Download PDF Blueprint</button>
+                <button class="btn btn-secondary" onclick="window.open('https://www.etsy.com', '_blank')">View on Etsy</button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Complete Modules</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">30</div>
+                    <div class="stat-label">Day Action Plan</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free Resources</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">3-5x</div>
+                    <div class="stat-label">More Traffic</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content with Sidebar -->
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title">Why E-Commerce Businesses Need SEO</h2>
+            
+            <div class="content-wrapper">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <h3 style="color: #1a1f3a; margin-bottom: 20px; font-size: 24px;">The E-Commerce SEO Advantage</h3>
+                    <p style="margin-bottom: 15px;">E-commerce businesses using SEO see <strong>3-5x more qualified traffic</strong> than those relying on paid ads alone. Here's why:</p>
+                    
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Active Buyers:</strong> People searching for products are ready to buy</li>
+                        <li style="margin-bottom: 10px;"><strong>Long-Term Value:</strong> One ranking drives sales for months or years</li>
+                        <li style="margin-bottom: 10px;"><strong>Higher Conversion:</strong> Organic traffic converts 2-3x better than paid ads</li>
+                        <li style="margin-bottom: 10px;"><strong>Cost-Effective:</strong> No ongoing ad spend after initial optimization</li>
+                    </ul>
+
+                    <p><strong>The Problem:</strong> Most e-commerce sellers spend 80% of their budget on ads while ignoring free organic traffic.</p>
+                    <p><strong>The Solution:</strong> This blueprint shows you how to flip that ratio and let SEO do the heavy lifting.</p>
+                </div>
+
+                <!-- Sidebar with AdSense -->
+                <div class="sidebar">
+                    <!-- AdSense Ad Space 1 -->
+                    <div class="sidebar-box">
+                        <div class="sidebar-title">📢 Advertisement</div>
+                        <div class="adsense-placeholder">
+                            <strong>Google AdSense</strong>
+                            <small>Your ad code here (300x250)</small>
+                            <br><br>
+                            <code style="font-size: 10px;">Paste AdSense code here</code>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="sidebar-box">
+                        <div class="sidebar-title">📚 Quick Links</div>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 10px;"><a href="#" style="color: #00d4ff; text-decoration: none;">→ SEO Basics</a></li>
+                            <li style="margin-bottom: 10px;"><a href="#" style="color: #00d4ff; text-decoration: none;">→ Keyword Research</a></li>
+                            <li style="margin-bottom: 10px;"><a href="#" style="color: #00d4ff; text-decoration: none;">→ Content Strategy</a></li>
+                            <li style="margin-bottom: 10px;"><a href="#" style="color: #00d4ff; text-decoration: none;">→ Free Tools</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualizations Section -->
+    <section class="section" id="data" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Key SEO Data Points</h2>
+
+            <!-- Ranking Factors Chart -->
+            <div class="chart-container">
+                <div class="chart-title">📊 Top 6 Ranking Factors (Impact %)</div>
+                <canvas id="rankingFactorsChart"></canvas>
+            </div>
+
+            <!-- Traffic Distribution -->
+            <div class="chart-container">
+                <div class="chart-title">🌐 Free Traffic Distribution by Source</div>
+                <canvas id="trafficSourceChart"></canvas>
+            </div>
+
+            <!-- Keyword Difficulty vs Volume -->
+            <div class="chart-container">
+                <div class="chart-title">🎯 Keyword Difficulty vs Search Volume</div>
+                <canvas id="keywordChart"></canvas>
+            </div>
+
+            <!-- Revenue Potential -->
+            <div class="chart-container">
+                <div class="chart-title">💰 Monthly Revenue Potential (1,000 Visitors)</div>
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">What's Included in the Blueprint</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>6 Complete Modules</h3>
+                    <p>From SEO basics to free traffic systems, each module is packed with actionable strategies designed for e-commerce businesses.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>30-Day Action Plan</h3>
+                    <p>Day-by-day roadmap with specific tasks for each week. Follow it and see your first organic traffic in 30 days.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Keyword Research System</h3>
+                    <p>Proven method to find low-competition keywords that convert. Includes free tools and step-by-step process.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3>Content Creation Framework</h3>
+                    <p>Six proven content formats with title formulas, blog structure, and writing tips that rank on Google.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>On-Page SEO Checklist</h3>
+                    <p>9 critical elements to optimize before publishing. Use this checklist for every article you create.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Free Traffic System</h3>
+                    <p>Multi-platform strategy combining Google Search, Pinterest, and TikTok for maximum reach and sales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product-section" id="product">
+        <div class="container">
+            <h2 class="section-title" style="color: white; margin-bottom: 40px;">Get the Complete Blueprint</h2>
+            
+            <div class="product-box">
+                <h3 style="font-size: 28px; margin-bottom: 10px;">DIY SEO Blueprint for E-Commerce</h3>
+                <p style="font-size: 14px; opacity: 0.9; margin-bottom: 20px;">Complete system to rank on Google & drive organic traffic</p>
+                
+                <div class="product-price">$29.99</div>
+                
+                <p class="product-description">Digital PDF - Instant Download</p>
+                
+                <ul class="product-features">
+                    <li>6 Complete Modules (50+ pages)</li>
+                    <li>30-Day Action Plan with daily tasks</li>
+                    <li>Keyword Research System</li>
+                    <li>Content Creation Framework</li>
+                    <li>On-Page SEO Checklist</li>
+                    <li>Free Traffic Strategies</li>
+                    <li>Free Tools List</li>
+                    <li>Lifetime Access & Updates</li>
+                </ul>
+
+                <button class="btn btn-primary" onclick="window.open('https://www.etsy.com', '_blank')" style="width: 100%; margin-top: 20px;">
+                    Buy on Etsy Now
+                </button>
+                
+                <p style="font-size: 12px; margin-top: 20px; opacity: 0.8;">30-day money-back guarantee. No questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with AdSense -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Free SEO Tools</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#">DIY SEO Blueprint</a></li>
+                    <li><a href="#">View on Etsy</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>📢 Advertisement</h4>
+                <div class="adsense-placeholder" style="margin-top: 10px;">
+                    <small>Google AdSense (Footer Ad)</small>
+                    <br><small>Paste code here</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 SEOBlueprint101.com - DIY SEO Blueprint for E-Commerce. All rights reserved. | <a href="#" style="color: #00d4ff;">Privacy</a> | <a href="#" style="color: #00d4ff;">Terms</a></p>
+        </div>
+    </footer>
+
+    <!-- Chart Scripts -->
+    <script>
+        // 1. Ranking Factors Chart
+        const rankingCtx = document.getElementById('rankingFactorsChart').getContext('2d');
+        new Chart(rankingCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Content Quality', 'Search Intent', 'On-Page SEO', 'User Experience', 'Backlinks', 'Topical Authority'],
+                datasets: [{
+                    label: 'Impact %',
+                    data: [90, 85, 80, 75, 70, 65],
+                    backgroundColor: [
+                        '#00d4ff',
+                        '#00b8d4',
+                        '#0099b3',
+                        '#ffd700',
+                        '#ffb700',
+                        '#ff9500'
+                    ],
+                    borderRadius: 5,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: { color: '#666' },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    y: {
+                        ticks: { color: '#333', font: { weight: 'bold' } }
+                    }
+                }
+            }
+        });
+
+        // 2. Traffic Distribution Pie Chart
+        const trafficCtx = document.getElementById('trafficSourceChart').getContext('2d');
+        new Chart(trafficCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Google Search', 'Pinterest', 'TikTok', 'Other'],
+                datasets: [{
+                    data: [53, 18, 12, 17],
+                    backgroundColor: ['#00d4ff', '#ffd700', '#ff6b6b', '#4ecdc4'],
+                    borderColor: '#fff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#333', padding: 15 }
+                    }
+                }
+            }
+        });
+
+        // 3. Keyword Difficulty Chart
+        const keywordCtx = document.getElementById('keywordChart').getContext('2d');
+        new Chart(keywordCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [
+                    {
+                        label: 'Generic Keywords (Hard)',
+                        data: [{x: 50000, y: 92}, {x: 90500, y: 95}],
+                        backgroundColor: '#ff6b6b',
+                        borderColor: '#ff6b6b',
+                        pointRadius: 8
+                    },
+                    {
+                        label: 'Long-Tail Keywords (Winnable)',
+                        data: [{x: 2400, y: 22}, {x: 880, y: 15}, {x: 1200, y: 18}],
+                        backgroundColor: '#00d4ff',
+                        borderColor: '#00d4ff',
+                        pointRadius: 8
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { color: '#333' }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Search Volume (Monthly)', color: '#333' },
+                        ticks: { color: '#666' },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    y: {
+                        title: { display: true, text: 'Keyword Difficulty', color: '#333' },
+                        ticks: { color: '#666' },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    }
+                }
+            }
+        });
+
+        // 4. Revenue Potential Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Google AdSense', 'Etsy Sales', 'Affiliate Marketing', 'Total'],
+                datasets: [{
+                    label: 'Monthly Revenue ($)',
+                    data: [300, 600, 1000, 1900],
+                    backgroundColor: ['#00d4ff', '#ffd700', '#4ecdc4', '#ff6b6b'],
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: '#666',
+                            callback: function(value) {
+                                return '$' + value;
+                            }
+                        },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    x: {
+                        ticks: { color: '#333' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
